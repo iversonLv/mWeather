@@ -53,20 +53,32 @@ const SingleDayLineChart = ({ day, darkMode }) => {
 				textStyle: {
 					fontSize: 13,
 					fontWeight: 300,
-					color: modeColor
+					color: modeColor()
 				}
 			},
 			xAxis: {
 				type: 'category',
 				data: [...Array(24).keys()].map((i) => i + ':00'),
 				boundaryGap: false,
+				nameTextStyle: {
+					color: modeColor()
+				},
+				axisLabel: {
+					color: modeColor()
+				},
 				name: t('chart.Hour')
 			},
 			yAxis: {
 				type: 'value',
 				name: '℃',
 				min: calGreatest(day?.hour, 'min') - 1,
-				max: calGreatest(day?.hour, 'max') + 1
+				max: calGreatest(day?.hour, 'max') + 1,
+				nameTextStyle: {
+					color: modeColor()
+				},
+				axisLabel: {
+					color: modeColor()
+				}
 			},
 			tooltip: {
 				trigger: 'axis',
@@ -118,7 +130,7 @@ const SingleDayLineChart = ({ day, darkMode }) => {
 					smooth: true,
 					symbolSize: 35,
 					label: {
-						color: modeColor,
+						color: modeColor(),
 						show: true,
 						fontSize: 12,
 						fontWeight: 300,

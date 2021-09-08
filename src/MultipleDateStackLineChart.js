@@ -81,13 +81,25 @@ const MultipleDateStackLineCahrt = ({ forecastday, darkMode }) => {
 				type: 'category',
 				data: [...Array(24).keys()].map((i) => i + ':00'),
 				boundaryGap: false,
+				nameTextStyle: {
+					color: modeColor()
+				},
+				axisLabel: {
+					color: modeColor()
+				},
 				name: t('chart.Hour')
 			},
 			yAxis: {
 				type: 'value',
 				name: '℃',
 				min: calGreatest(forecastday, 'min') - 1,
-				max: calGreatest(forecastday, 'max') + 1
+				max: calGreatest(forecastday, 'max') + 1,
+				nameTextStyle: {
+					color: modeColor()
+				},
+				axisLabel: {
+					color: modeColor()
+				}
 			},
 			tooltip: {
 				trigger: 'axis',
